@@ -2,11 +2,11 @@
 ## Releases
 
 Release 0
-> ** A user can register
-> ** A user can log in
-> ** A users, when they log in, land on their timeline, which shows all their tweets
-> ** A user can post status updates
-> ** A user can only post status updates of 140 characters or less
+> * A user can register
+> * A user can log in
+> * A users, when they log in, land on their timeline, which shows all their tweets
+> * A user can post status updates
+> * A user can only post status updates of 140 characters or less
 
 Release 1
 > ** A user can follow other users
