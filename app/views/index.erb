@@ -1,4 +1,5 @@
-<table
+<form action="/login" method='post' name="login"> <br>
+<table class ="container"
   style="text-align: left; width: 558px; height: 149px; background-color: white;"
   border="1" cellpadding="2" cellspacing="2">
   <tbody>
@@ -9,25 +10,32 @@
     </tr>
     <tr>
       <td style="vertical-align: top;">Username:</td>
-      <td style="vertical-align: top;"><input name="Username"
+      <td style="vertical-align: top;"><input name="handle"
       value="username"></td>
     </tr>
     <tr>
       <td style="vertical-align: top;">Password: </td>
       <td style="vertical-align: top;"><input name="password"><br>
     </td>
-  </tr>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><input type='submit' value='submit'><br>
+    </td>
+    </tr>
 </tbody>
 </table>
-<br>
-<form action="login" name="login"> <br>
-<br>
-<br>
+
 </form>
+
 <br>
 <br>
 <br>
-<table style="text-align: left; width: 556px; height: 211px;" border="1"
+<br>
+<br>
+<br>
+
+<form action="/user" method='post' name="login"> <br>
+<table class ="container" style="text-align: left; width: 556px; height: 211px;" border="1"
 cellpadding="2" cellspacing="2">
 <tbody>
   <tr>
@@ -38,23 +46,30 @@ cellpadding="2" cellspacing="2">
   <tr>
     <td style="vertical-align: top;">Enter your first and last name<br>
     </td>
-    <td style="vertical-align: top;"><input name="fullname"></td>
+    <td style="vertical-align: top;"></td>
   </tr>
   <tr>
     <td style="vertical-align: top;">Enter your Kut username<br>
     </td>
-    <td style="vertical-align: top;"><input name="username"></td>
+    <td style="vertical-align: top;"><input name="user[handle]"></td>
   </tr>
   <tr>
     <td style="vertical-align: top;">Enter your email address<br>
     </td>
-    <td style="vertical-align: top;"><input name="email"></td>
+    <td style="vertical-align: top;"><input name="user[email]"></td>
   </tr>
   <tr>
     <td style="vertical-align: top;">Enter your password<br>
     </td>
-    <td style="vertical-align: top;"><input name="password"
+    <td style="vertical-align: top;"><input name="user[password]"
     type="password"></td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"><input type='submit' value='submit'></td>
   </tr>
 </tbody>
 </table>
+</form>
+
+
+<!-- <input name="user[fullname]"> -->
