@@ -1,13 +1,44 @@
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+margin: 20px auto;
+width: 600px;
+padding: 0px 20px 20px 20px;
+border: 1px dotted black;
 }
 th {
-  text-align: left;
+text-align: left;
 }
 input {
-  font-size: 50px;
-  size: 50;
+font-size: 50px;
+size: 50;
+}
+.profile-header{
+padding-top: 2em;
+border-bottom: 1px solid #333;
+}
+.profile-handle{
+font-size: 2em;
+margin-right: 20em;
+}
+.profile-image-clear-fix{
+clear: both;
+}
+.profile-image {
+width: 3em;
+float: right;
+}
+.tweet-envelope{
+border: 1px solid #333;
+margin-top: 1em;
+margin-bottom: 1em;
+padding: 1em;
+}
+.tweet-list{
+width: 80%;
+margin: 1em auto;
+}
+.tweet-content{
+}
+.tweettextsubmit{
+margin-left: auto;
+margin-right: auto;
 }
