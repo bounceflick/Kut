@@ -6,7 +6,6 @@ get '/users' do #show all users
 end
 
 post '/users' do # create net user
-  "landed"
   User.create(params[:user])
   redirect '/login'
 end
