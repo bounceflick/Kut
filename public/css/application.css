@@ -11,3 +11,33 @@ input {
   font-size: 50px;
   size: 50;
 }
+
+.profile-header{
+  padding-top: 2em;
+  border-bottom: 1px solid #333;
+}
+.profile-handle{
+  font-size: 2em;
+}
+
+.profile-image-clear-fix{
+    clear: both;
+}
+.profile-image {
+  width: 3em;
+  float: right;
+}
+
+.tweet{
+  border: 1px solid #333;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.tweet-list{
+  width: 80%;
+  margin: 1em auto;
+}
+.tweet-content{
+}
