@@ -18,3 +18,12 @@ get '/users/:id' do #user timeline (landing page after login)
   <p> Hello user with id ##{params[:id]}!!
   HTML
 end
+
+get '/follow/:id' do
+  if user_logged_in?
+    @user = User.find(session['user_id'])
+    @user.follow(params[:id])
+
+    redirect "/users/#{session['user_id']}"
+  end
+
