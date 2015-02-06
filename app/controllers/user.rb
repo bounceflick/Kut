@@ -13,5 +13,12 @@ end
 
 get '/users/:id' do #user timeline (landing page after login)
  @user=User.find(params[:id])
- erb :"users/timeline"
+ erb :"users/profile"
+end
+
+post '/tweet' do
+  @user=User.find_by(handle:params[:user])
+  <<-HTML
+  <H3><%= @user %></H3>
+  HTML
 end
