@@ -11,12 +11,20 @@ post '/users' do # create net user
 end
 
 get '/users/:id' do #user timeline (landing page after login)
- <<-HTML
-  <h3>Under Development</h3>
-  <br><br>
-  <p>Wooo this is my timeline</p>
-  <p> Hello user with id ##{params[:id]}!!
-  HTML
+ @user=User.find(params[:id])
+ erb :"users/profile"
+end
+
+post '/tweet' do
+  @user=User.find_by(handle:params[:user])
+  @content =params[:submittext]
+  @user.tweets.create(content:@content)
+  redirect "/users/#{@user.id}"
+end
+
+post '/followers' do
+  @user=User.find_by(handle:params[:user])
+  erb :"users/followers"
 end
 
 get '/follow/:id' do

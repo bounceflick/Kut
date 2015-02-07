@@ -5,7 +5,7 @@ class CreateUsersTable < ActiveRecord::Migration
       t.string :handle
       t.string :password_hash
       t.string :email
-
+ 
 
       t.timestamps
     end
