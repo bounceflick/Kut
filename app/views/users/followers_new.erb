@@ -5,9 +5,9 @@
   <div class="profile-image-clear-fix"></div>
 </div>
 <div class="nonfollower-list">
-  <form action="/profile" method="get">
+  <form action="/users/<%= @user.id %>/followers/new" method="post">
     <% @nonfollowers.each do |nonfollower| %>
-    <input type="checkbox" name="vehicle" value="<%= nonfollower.id %>" > <%= nonfollower.handle %><br>
+    <input type="checkbox" name="user[<%=nonfollower.handle%>]" value="<%= nonfollower.id%>"><%=nonfollower.handle%><br>
     <% end %>
     <input type="submit" value="Submit">
   </form>

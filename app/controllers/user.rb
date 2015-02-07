@@ -30,6 +30,10 @@ end
 get '/users/:id/followers/new' do
   @user = User.find(params[:id])
   @nonfollowers = User.all - @user.followers - [@user]
-  puts @nonfollowers
   erb :"users/followers_new"
+end
+
+post '/users/:id/followers/new' do
+  test= params[:user]
+  p test
 end
