@@ -10,13 +10,13 @@ class User < ActiveRecord::Base
 
 
   # assume 2 users:
-  #     mau (Userobj) with id 10, 
-  #     james (Userobj) with id 20, 
+  #     mau (Userobj) with id 10,
+  #     james (Userobj) with id 20,
   #     follow (Followobj) with id=1 and entry user_id: 10 and subscribed_to_id: 20
 
   has_many :subscribes, class_name: "Follow", foreign_key: "user_id"    # key not needed but makes it more readable!
   has_many :followees, class_name: "Follow", foreign_key: "subscribed_to_id" # key not needed but makes it more readable!
-  
+
   #  following is now possible:
 
   #  mau.subcribes      => followers object with id 1 (because mau user_id == follow.user_id)
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   # but we dont want follow objects, we want the actual users.
   # note that #follower and #subscription are defined for follow object:
-  
+
   # follow.follower     => mau (because follow.rb: line 2)
   # follow.subscription => james (because follow.rb: line 5)
 
@@ -45,10 +45,7 @@ class User < ActiveRecord::Base
   # remember how james.followees returns a follow object user_id = 10 and subscribed_to_id = 20 (which stores that mau is a followee of james)
   # and remember how in follow.rb follow.follower points toward the user that is a follower?
 
-  # james.followers gets the array of follow objects through "james.followees", then gives you the corresponding user by doing follow.followees on each of those objects. 
-
-
-
+  # james.followers gets the array of follow objects through "james.followees", then gives you the corresponding user by doing follow.followees on each of those objects.
 
   def password
     @password ||= Password.new(password_hash)

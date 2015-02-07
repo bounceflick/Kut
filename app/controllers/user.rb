@@ -17,7 +17,7 @@ end
 
 post '/tweet' do
   @user=User.find_by(handle:params[:user])
-  <<-HTML
-  <H3><%= @user %></H3>
-  HTML
+  @content =params[:submittext]
+  @user.tweets.create(content:@content)
+  redirect "/users/#{@user.id}"
 end
