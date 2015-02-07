@@ -1,0 +1,14 @@
+<div class="profile-header">
+  <img  class="profile-image" src="http://upload.wikimedia.org/wikipedia/en/9/97/Stimpy.jpg">
+  <div class="profile-handle">@<%= @user.handle %>
+  </div>
+  <div class="profile-image-clear-fix"></div>
+</div>
+<div class="nonfollower-list">
+  <form action="/profile" method="get">
+    <% @nonfollowers.each do |nonfollower| %>
+    <input type="checkbox" name="vehicle" value="<%= nonfollower.id %>" > <%= nonfollower.handle %><br>
+    <% end %>
+    <input type="submit" value="Submit">
+  </form>
+</div>

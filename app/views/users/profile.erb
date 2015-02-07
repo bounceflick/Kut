@@ -13,7 +13,7 @@
 <div class="tweet-list">
   <% @user.tweets.each do |tweet| %>
   <div class="tweet-envelope">
-    <div class="tweet-user"><%= tweet.user_id %></div>
+    <div class="tweet-user"><%= User.find(tweet.user_id).handle %></div>
     <div class="tweet-content"><%= tweet.content %></div>
   </div>
   <% end %>

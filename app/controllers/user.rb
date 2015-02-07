@@ -22,7 +22,14 @@ post '/tweet' do
   redirect "/users/#{@user.id}"
 end
 
-post '/followers' do
+get '/followers' do
   @user=User.find_by(handle:params[:user])
   erb :"users/followers"
+end
+
+get '/users/:id/followers/new' do
+  @user = User.find(params[:id])
+  @nonfollowers = User.all - @user.followers - [@user]
+  puts @nonfollowers
+  erb :"users/followers_new"
 end
