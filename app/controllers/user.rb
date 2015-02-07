@@ -21,3 +21,8 @@ post '/tweet' do
   @user.tweets.create(content:@content)
   redirect "/users/#{@user.id}"
 end
+
+post '/followers' do
+  @user=User.find_by(handle:params[:user])
+  erb :"users/followers"
+end
