@@ -1,7 +1,7 @@
 get '/users' do #show all users
  @users = User.all
  p @users[1].handle
- p "above this ine"
+ p "above this line"
  erb :view_all
 end
 
@@ -23,7 +23,8 @@ post '/tweet' do
 end
 
 post '/followers' do
-  @user=User.find_by(handle:params[:user])
+  @profile_owner =User.find_by(handle:params[:user])
+
   erb :"users/followers"
 end
 
@@ -35,3 +36,4 @@ get '/follow/:id' do
     redirect "/users/#{session['user_id']}"
   end
 
+end

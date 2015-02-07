@@ -1,0 +1,27 @@
+<h3>Profile for <%= profile_owner.handle %> </h3>
+
+  <div>
+    You are following:
+    <% @profile_owner.subscribers.each do |subscriber|  %>
+    <ul>
+      <li> <a href="/users/<%= "#{subscriber.subscriber_id}" %>"> <%= subscriber.subscriber_email %> </a> </li>
+    </ul>
+    <% end %>
+  </div>
+  <br>
+
+  <div>
+    People following you:
+    <% @profile_owner.followers.each do |follower|  %>
+    <ul>
+      <li> <a href="/users/<%= "#{follower.follower_id}" %>"> <%= follower.followers_email %> </a> </li>
+    </ul>
+    <% end %>
+  </div>
+  <br>
+
+  <p>Had enough??</p>
+  <a href="/logout">Log Out</a>
+
+
+</div>

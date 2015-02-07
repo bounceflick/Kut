@@ -1,13 +1,16 @@
 <div class="profile-header">
   <img  class="profile-image" src="http://upload.wikimedia.org/wikipedia/en/9/97/Stimpy.jpg">
   <div class="profile-handle">@<%= @user.handle %>
-    <form action='/tweet' method='post'>
-
-      <textarea class="tweettextsubmit" name="submittext" rows="2" cols="30" maxlength="140" placeholder="Enter your tweet here"></textarea>
+    <form action='/followers' method='post'>
       <input type="hidden" name="user" value="<%= @user.handle %>">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Followers">
+      <form action='/followers' method='post'>
+      <input type="hidden" name="user" value="<%= @user.handle %>">
+      <input type="submit" value="Following">
   </form>
     </div>
+
+
   <div class="profile-image-clear-fix"></div>
 </div>
 <div class="tweet-list">
